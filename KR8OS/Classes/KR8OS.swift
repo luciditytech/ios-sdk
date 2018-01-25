@@ -9,17 +9,20 @@
 import Foundation
 import AdSupport
 
-final public class KR8OS {
+public class KR8OS: NSObject {
     
     private static let KR8OS_URL = URL(string: "https://transponder.kr8os.com/v1/postbacks")!
     private static let defaults = UserDefaults(suiteName: String(describing: KR8OS.self))
+    
+    // Prevent object instantiation
+    private override init() {}
     
     /**
      Registers an app installation with KR8OS.
      
      - parameter appId: `String` provided by KR8OS.
      */
-    @objc public static func registerInstall(appId: String) {
+    @objc public class func registerInstall(appId: String) {
         // Objective-c compatible initializer as objective-c does not support default method parameter values.
         registerInstall(appId: appId, debug: false)
     }
@@ -30,7 +33,7 @@ final public class KR8OS {
      - parameter appId: `String` provided by KR8OS.
      - parameter debug: `Bool` specifies that registration is being requested for a debug build. This should be set to `false` before deploying to the App Store.
      */
-    @objc public static func registerInstall(appId: String, debug: Bool) {
+    @objc public class func registerInstall(appId: String, debug: Bool = false) {
         guard let idfa = identifierForAdvertising else {
             printWarning("ASIdentifierManager.shared().isAdvertisingTrackingEnabled returned false.")
             return
@@ -101,14 +104,14 @@ final public class KR8OS {
     }
     
     // Stores the current date for registration.
-    private static func register() {
+    private class func register() {
         let date = Date()
         defaults?.set(date, forKey: "registered")
         print("KR8OS successfully registered IDFA \(identifierForAdvertising!) on \(date).")
     }
     
     // Prints warning messages prefixed with the KR8OS tag.
-    private static func printWarning(_ message: String) {
+    private class func printWarning(_ message: String) {
         print("KR8OS failed to register:", message)
     }
     
