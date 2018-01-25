@@ -1,4 +1,4 @@
-![](https://github.com/kr8os/ios-sdk/blob/master/KR8OS/Assets.xcassets/KR8OS.imageset/Image.png?raw=true)
+![](https://github.com/kr8os/ios-sdk/blob/master/Example/KR8OS/Assets.xcassets/KR8OS.imageset/Image.png?raw=true)
 # iOS SDK
 [![Version](https://img.shields.io/cocoapods/v/KR8OS.svg?style=flat)](http://cocoapods.org/pods/KR8OS)
 [![License](https://img.shields.io/cocoapods/l/KR8OS.svg?style=flat)](http://cocoapods.org/pods/KR8OS)
