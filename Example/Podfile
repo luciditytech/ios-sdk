@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KR8OS_Example' do
+  pod 'KR8OS', :path => '../'
+
+  target 'KR8OS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
