@@ -18,9 +18,19 @@ final public class KR8OS {
      Registers an app installation with KR8OS.
      
      - parameter appId: `String` provided by KR8OS.
-     - parameter debug: *optional* `Bool` specifies that registration is being requested for a debug build. This should be set to `false` before deploying to the App Store.
      */
-    static func registerInstall(appId: String, debug: Bool = false) {
+    static func registerInstall(appId: String) {
+        // Objective-c compatible initializer as objective-c does not support default method parameter values.
+        registerInstall(appId: appId, debug: false)
+    }
+    
+    /**
+     Registers an app installation with KR8OS.
+     
+     - parameter appId: `String` provided by KR8OS.
+     - parameter debug: `Bool` specifies that registration is being requested for a debug build. This should be set to `false` before deploying to the App Store.
+     */
+    static func registerInstall(appId: String, debug: Bool) {
         guard let idfa = identifierForAdvertising else {
             printWarning("ASIdentifierManager.shared().isAdvertisingTrackingEnabled returned false.")
             return
