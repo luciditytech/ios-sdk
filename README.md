@@ -1,9 +1,5 @@
 [![KR8OS](https://github.com/kr8os/ios-sdk/blob/master/Example/KR8OS/Assets.xcassets/KR8OS.imageset/Image.png?raw=true)](http://www.kr8os.com)
 # iOS SDK
-[![Version](https://img.shields.io/cocoapods/v/KR8OS.svg?style=flat-square)](http://cocoapods.org/pods/KR8OS)
-[![License](https://img.shields.io/cocoapods/l/KR8OS.svg?style=flat-square)](http://cocoapods.org/pods/KR8OS)
-[![Platform](https://img.shields.io/cocoapods/p/KR8OS.svg?style=flat-square)](http://cocoapods.org/pods/KR8OS)
-
 * **[Overview](#overview)**
 * **[Requirements](#requirements)**
 * **[Installation](#installation)**
